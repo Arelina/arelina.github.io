@@ -6,10 +6,33 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-08-31T10:27:48.745Z</updated>
+  <updated>2019-09-25T11:38:53.701Z</updated>
   <id>http://yoursite.com/</id>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ByeSame</title>
+    <link href="http://yoursite.com/2019/09/25/ByeSame/"/>
+    <id>http://yoursite.com/2019/09/25/ByeSame/</id>
+    <published>2019-09-25T11:37:53.000Z</published>
+    <updated>2019-09-25T11:38:53.701Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="ByeSame"><a href="#ByeSame" class="headerlink" title="ByeSame"></a>ByeSame</h3><p>百杉第一天</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;ByeSame&quot;&gt;&lt;a href=&quot;#ByeSame&quot; class=&quot;headerlink&quot; title=&quot;ByeSame&quot;&gt;&lt;/a&gt;ByeSame&lt;/h3&gt;&lt;p&gt;百杉第一天&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>myfirst</title>
