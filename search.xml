@@ -3,7 +3,10 @@
   <entry>
     <title><![CDATA[my tag]]></title>
     <url>%2F2019%2F09%2F26%2Fmy-tag%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[My Tags孤独不寂寞，在成长路上前行]]></content>
+      <tags>
+        <tag>tags</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[ByeSame]]></title>

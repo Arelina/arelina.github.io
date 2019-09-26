@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-09-26T01:34:06.866Z</updated>
+  <updated>2019-09-26T01:47:03.824Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,13 +21,23 @@
     <link href="http://yoursite.com/2019/09/26/my-tag/"/>
     <id>http://yoursite.com/2019/09/26/my-tag/</id>
     <published>2019-09-26T01:34:06.000Z</published>
-    <updated>2019-09-26T01:34:06.866Z</updated>
+    <updated>2019-09-26T01:47:03.824Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="My-Tags"><a href="#My-Tags" class="headerlink" title="My Tags"></a>My Tags</h3><p>孤独不寂寞，在成长路上前行</p>]]></content>
     
     <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;My-Tags&quot;&gt;&lt;a href=&quot;#My-Tags&quot; class=&quot;headerlink&quot; title=&quot;My Tags&quot;&gt;&lt;/a&gt;My Tags&lt;/h3&gt;&lt;p&gt;孤独不寂寞，在成长路上前行&lt;/p&gt;
+
+      
     
     </summary>
     
     
+    
+      <category term="tags" scheme="http://yoursite.com/tags/tags/"/>
     
   </entry>
   
