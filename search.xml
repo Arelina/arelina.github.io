@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[my tag]]></title>
-    <url>%2F2019%2F09%2F26%2Fmy-tag%2F</url>
-    <content type="text"><![CDATA[My Tags孤独不寂寞，在成长路上前行]]></content>
-      <tags>
-        <tag>tags</tag>
-      </tags>
+    <title><![CDATA[Spring注解]]></title>
+    <url>%2F2019%2F09%2F29%2FSpring%E6%B3%A8%E8%A7%A3%2F</url>
+    <content type="text"><![CDATA[Spring注解单纯注解方式 ​ base-package 为注解扫描的路径 1&lt;context:component-scan base-package="com.arelin"/&gt; 1234567@Component("userService")等同于 @Service("userService")，dao等等 再不用的层用不同的名字，好区分 但是意义相同 @Value("米饭")直接注入属性 @Resource(name = "userDao") 注入其他的bean,或者类 其他注解 1234@PostConstruct等同于init 为bean初始化时运行@PreDestroybean销毁时运行 注解和xml方式联合使用 在xml中 1&lt;context:annotation-config/&gt;&lt;bean id="productService" class="com.arelin.demo3.ProductService"/&gt;&lt;bean id="productDao" class="com.arelin.demo3.ProductDao"/&gt;&lt;bean id="cateDao" class="com.arelin.demo3.CateDao"/&gt; 只添加主类的bean,属性和依赖注入交给注解以@Resource的方式]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[css定位]]></title>
+    <url>%2F2019%2F09%2F29%2Fcss%E5%AE%9A%E4%BD%8D%2F</url>
+    <content type="text"><![CDATA[CSS定位普通文档流==标准文档流 normal-flow ​ 块级元素和行内元素属性 position ​ 元素定位，层叠相关功能，核心模块 盒子模型的类型和尺寸 布局模型 定位模型 自然/静态/常规定位 static 不会受top,bottom等影响 外边距塌陷 margin 听比较大的 如果左右设置 auto，左右边距会自动扩大占满剩余宽度 绝对定位 absolute 使元素脱离常规流 找 设置定位的祖先元素进行绝对定位，如果没有则找body元素 lrtb如果设置为0 则对齐到最近的定位祖先元素的各边 margin:auto;则会上下左右居中 相对定位 relative 使是元素成为 containing-block 可定位的祖先元素 可以设置 上下左右 z-index ,相对于自身的定位 不会离开常规流 任何元素都可以设置relative 。他的绝对定位后代可以设置相对于设置相对定位元素进行移动 固定定位 fixed 相对于视口定位 不会随元素视口滚动而滚动 继承absolute特点 IE盒子模型 设置的宽高 为内容+padding的 宽高 弹出层设计 主体层 遮罩层 弹出层]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[CSS世界读书笔记(一)]]></title>
+    <url>%2F2019%2F09%2F27%2FCSS%E4%B8%96%E7%95%8C%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-%E4%B8%80%2F</url>
+    <content type="text"><![CDATA[CSS世界读书笔记 （一）]]></content>
   </entry>
   <entry>
     <title><![CDATA[ByeSame]]></title>

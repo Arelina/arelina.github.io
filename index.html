@@ -296,10 +296,10 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/26/my-tag/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/29/Spring注解/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="傻傻小林子">
+      <meta itemprop="name" content="小林子">
       <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.jpg">
     </span>
@@ -315,7 +315,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/09/26/my-tag/" itemprop="url">my tag</a></h1>
+                <a class="post-title-link" href="/2019/09/29/Spring注解/" itemprop="url">Spring注解</a></h1>
         
 
         <div class="post-meta">
@@ -327,8 +327,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-26T09:34:06+08:00">
-                2019-09-26
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-29T14:25:48+08:00">
+                2019-09-29
               </time>
             
 
@@ -367,8 +367,324 @@
       
         
           
-            <h3 id="My-Tags"><a href="#My-Tags" class="headerlink" title="My Tags"></a>My Tags</h3><p>孤独不寂寞，在成长路上前行</p>
+            <h3 id="Spring注解"><a href="#Spring注解" class="headerlink" title="Spring注解"></a>Spring注解</h3><p>单纯注解方式</p>
+<p>​    base-package 为注解扫描的路径</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">context:component-scan</span> <span class="attr">base-package</span>=<span class="string">"com.arelin"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
 
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Component</span>(<span class="string">"userService"</span>)</span><br><span class="line">等同于</span><br><span class="line"> <span class="meta">@Service</span>(<span class="string">"userService"</span>)，dao等等</span><br><span class="line"> 再不用的层用不同的名字，好区分 但是意义相同</span><br><span class="line"> </span><br><span class="line"> <span class="meta">@Value</span>(<span class="string">"米饭"</span>)直接注入属性</span><br><span class="line"> <span class="meta">@Resource</span>(name = <span class="string">"userDao"</span>) 注入其他的bean,或者类</span><br></pre></td></tr></table></figure>
+
+<p>其他注解</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@PostConstruct</span><br><span class="line">等同于init 为bean初始化时运行</span><br><span class="line">@PreDestroy</span><br><span class="line">bean销毁时运行</span><br></pre></td></tr></table></figure>
+
+<hr>
+<hr>
+<hr>
+<p>注解和xml方式联合使用</p>
+<p>在xml中</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">context:annotation-config</span>/&gt;</span><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"productService"</span> <span class="attr">class</span>=<span class="string">"com.arelin.demo3.ProductService"</span>/&gt;</span><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"productDao"</span> <span class="attr">class</span>=<span class="string">"com.arelin.demo3.ProductDao"</span>/&gt;</span><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"cateDao"</span> <span class="attr">class</span>=<span class="string">"com.arelin.demo3.CateDao"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>只添加主类的bean,属性和依赖注入交给注解以@Resource的方式</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/29/css定位/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="小林子">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Arelin's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/09/29/css定位/" itemprop="url">css定位</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-29T14:23:09+08:00">
+                2019-09-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="CSS定位"><a href="#CSS定位" class="headerlink" title="CSS定位"></a>CSS定位</h1><p>普通文档流==标准文档流 normal-flow</p>
+<p>​    块级元素和行内元素属性</p>
+<blockquote>
+<p>position</p>
+</blockquote>
+<p>​            元素定位，层叠相关功能，核心模块</p>
+<ol>
+<li><p>盒子模型的类型和尺寸</p>
+</li>
+<li><p>布局模型</p>
+</li>
+<li><p>定位模型</p>
+<ol>
+<li><p>自然/静态/常规定位 static</p>
+<ol>
+<li>不会受top,bottom等影响</li>
+<li>外边距塌陷 margin 听比较大的</li>
+<li>如果左右设置 auto，左右边距会自动扩大占满剩余宽度</li>
+</ol>
+</li>
+<li><p>绝对定位 absolute</p>
+<blockquote>
+<p>使元素脱离常规流</p>
+</blockquote>
+<ol>
+<li>找 设置定位的祖先元素进行绝对定位，如果没有则找body元素</li>
+<li>lrtb如果设置为0 则对齐到最近的定位祖先元素的各边 margin:auto;则会上下左右居中</li>
+<li></li>
+</ol>
+</li>
+<li><p>相对定位  relative</p>
+<blockquote>
+<p>使是元素成为 containing-block  可定位的祖先元素</p>
+</blockquote>
+<ol>
+<li>可以设置 上下左右 z-index ,相对于自身的定位</li>
+<li>不会离开常规流</li>
+<li>任何元素都可以设置relative 。他的绝对定位后代可以设置相对于设置相对定位元素进行移动</li>
+</ol>
+</li>
+<li><p>固定定位 fixed</p>
+<ol>
+<li>相对于视口定位</li>
+<li>不会随元素视口滚动而滚动</li>
+<li>继承absolute特点 </li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<p>IE盒子模型</p>
+<ul>
+<li>设置的宽高 为内容+padding的 宽高</li>
+</ul>
+<blockquote>
+<p>弹出层设计</p>
+</blockquote>
+<ol>
+<li>主体层</li>
+<li>遮罩层</li>
+<li>弹出层</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/27/CSS世界读书笔记-一/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="小林子">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Arelin's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/09/27/CSS世界读书笔记-一/" itemprop="url">CSS世界读书笔记(一)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-27T01:04:01+08:00">
+                2019-09-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="CSS世界读书笔记-（一）"><a href="#CSS世界读书笔记-（一）" class="headerlink" title="CSS世界读书笔记 （一）"></a>CSS世界读书笔记 （一）</h1>
           
         
       
@@ -419,7 +735,7 @@
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/25/ByeSame/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="傻傻小林子">
+      <meta itemprop="name" content="小林子">
       <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.jpg">
     </span>
@@ -539,7 +855,7 @@
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/31/myfirst/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="傻傻小林子">
+      <meta itemprop="name" content="小林子">
       <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.jpg">
     </span>
@@ -658,7 +974,7 @@
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/31/hello-world/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="傻傻小林子">
+      <meta itemprop="name" content="小林子">
       <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.jpg">
     </span>
@@ -809,9 +1125,9 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="傻傻小林子">
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="小林子">
             
-              <p class="site-author-name" itemprop="name">傻傻小林子</p>
+              <p class="site-author-name" itemprop="name">小林子</p>
               <p class="site-description motion-element" itemprop="description">星光不负赶路人</p>
           </div>
 
@@ -822,7 +1138,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -830,15 +1146,6 @@
 
             
 
-            
-              
-              
-              <div class="site-state-item site-state-tags">
-                
-                  <span class="site-state-item-count">1</span>
-                  <span class="site-state-item-name">标签</span>
-                
-              </div>
             
 
           </nav>
@@ -859,6 +1166,12 @@
                     <a href="arelinaaa@gmail.com" target="_blank" title="E-Mail">
                       
                         <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://weibo.com/u/7281419974" target="_blank" title="微博">
+                      
+                        <i class="fa fa-fw fa-globe"></i>微博</a>
                   </span>
                 
             </div>
@@ -893,7 +1206,7 @@
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">傻傻小林子</span>
+  <span class="author" itemprop="copyrightHolder">小林子</span>
 
   
 </div>
@@ -927,21 +1240,21 @@ show_date_time();
 
         
 <div class="busuanzi-count">
-  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
   
     <span class="site-uv">
-      <i class="fa fa-user"></i>
+      本站访客数
       <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
-      
+      人次
     </span>
   
 
   
     <span class="site-pv">
-      <i class="fa fa-eye"></i>
+      本站总访问量
       <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
-      
+      次
     </span>
   
 </div>
