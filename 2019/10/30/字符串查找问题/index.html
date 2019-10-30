@@ -81,17 +81,17 @@
 
 
 
-<meta name="description" content="星光不负赶路人">
+<meta name="description" content="给定一个字符串 在里面查找一个字符串 并返回其出现位置和出现的次数例如： 1234var str = &quot;短路是指电路或电路中的JavaScript一部分被短接&quot; +       &quot;如负载与电源两端被导线连接在一JavaScript起就称为短路短路时电源提供的电			JavaScript流将比通路时&quot; +       &quot;提供的电流大得多一JavaScript般情况下不允许短路JavaScript如果">
 <meta property="og:type" content="article">
-<meta property="og:title" content="myfirst">
-<meta property="og:url" content="http://yoursite.com/2019/08/31/myfirst/index.html">
+<meta property="og:title" content="字符串查找问题">
+<meta property="og:url" content="http://yoursite.com/2019/10/30/字符串查找问题/index.html">
 <meta property="og:site_name" content="Arelin&#39;s blog">
-<meta property="og:description" content="星光不负赶路人">
+<meta property="og:description" content="给定一个字符串 在里面查找一个字符串 并返回其出现位置和出现的次数例如： 1234var str = &quot;短路是指电路或电路中的JavaScript一部分被短接&quot; +       &quot;如负载与电源两端被导线连接在一JavaScript起就称为短路短路时电源提供的电			JavaScript流将比通路时&quot; +       &quot;提供的电流大得多一JavaScript般情况下不允许短路JavaScript如果">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-31T10:27:48.745Z">
+<meta property="og:updated_time" content="2019-10-30T11:42:48.458Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="myfirst">
-<meta name="twitter:description" content="星光不负赶路人">
+<meta name="twitter:title" content="字符串查找问题">
+<meta name="twitter:description" content="给定一个字符串 在里面查找一个字符串 并返回其出现位置和出现的次数例如： 1234var str = &quot;短路是指电路或电路中的JavaScript一部分被短接&quot; +       &quot;如负载与电源两端被导线连接在一JavaScript起就称为短路短路时电源提供的电			JavaScript流将比通路时&quot; +       &quot;提供的电流大得多一JavaScript般情况下不允许短路JavaScript如果">
 
 
 
@@ -121,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/08/31/myfirst/">
+  <link rel="canonical" href="http://yoursite.com/2019/10/30/字符串查找问题/">
 
 
 
 
 
-  <title>myfirst | Arelin's blog</title>
+  <title>字符串查找问题 | Arelin's blog</title>
   
 
 
@@ -296,7 +296,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/31/myfirst/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/30/字符串查找问题/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="小林子">
@@ -313,7 +313,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">myfirst</h1>
+          <h1 class="post-title" itemprop="name headline">字符串查找问题</h1>
         
 
         <div class="post-meta">
@@ -325,8 +325,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-31T18:27:48+08:00">
-                2019-08-31
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-30T19:41:57+08:00">
+                2019-10-30
               </time>
             
 
@@ -368,7 +368,28 @@
       
 
       
-        
+        <h2 id="给定一个字符串-在里面查找一个字符串-并返回其出现位置和出现的次数"><a href="#给定一个字符串-在里面查找一个字符串-并返回其出现位置和出现的次数" class="headerlink" title="给定一个字符串 在里面查找一个字符串 并返回其出现位置和出现的次数"></a>给定一个字符串 在里面查找一个字符串 并返回其出现位置和出现的次数</h2><p>例如：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">"短路是指电路或电路中的JavaScript一部分被短接"</span> +</span><br><span class="line">       <span class="string">"如负载与电源两端被导线连接在一JavaScript起就称为短路短路时电源提供的电			JavaScript流将比通路时"</span> +</span><br><span class="line">       <span class="string">"提供的电流大得多一JavaScript般情况下不允许短路JavaScript如果短路"</span>;</span><br><span class="line"><span class="keyword">var</span> word = <span class="string">"JavaScript"</span>;</span><br></pre></td></tr></table></figure>
+
+<p>给定一个 字符串 str 要求返会在字符串中word的位置和出现次数</p>
+<blockquote>
+<p>方法一（简单）</p>
+</blockquote>
+<p>思路： 使用字符串的方法lastIndexOf() 方法 进行倒序查询，由于这个方法只能查询单个，</p>
+<p>所以在每次查询到相应单词后，需要将字符串截取，截取所查字符串前方的字符，</p>
+<p>可以使用 substring()方法或者slice()方法，截取单词位置之前的字符串</p>
+<p>然后 通过循环再次 查询截取 直至str.lastIndexOf()  =-!的时候 停止循环</p>
+<p>其中可以再循环中 每次查询出的时候把位置 存储到数组中即可 最后数组的长度即为单词出现的次数。</p>
+<p>具体实现如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">str, word</span>) </span>&#123;</span><br><span class="line">    <span class="comment">//所查字符串出现的位置</span></span><br><span class="line">   <span class="keyword">var</span> loca = str.lastIndexOf(word);</span><br><span class="line">    <span class="comment">//存放位置的数组</span></span><br><span class="line">   <span class="keyword">var</span> arr = [];</span><br><span class="line">   <span class="keyword">while</span> (loca != <span class="number">-1</span>) &#123;</span><br><span class="line">       arr.push(loca)</span><br><span class="line">       str = str.substring(<span class="number">0</span>,loca);</span><br><span class="line">       loca = str.lastIndexOf(word);</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">return</span> arr;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>方法二（<i style="color:red;">最简单</i>）</p>
+</blockquote>
+<p>每一次截取字符串的10位，如果和目标值字符串相等  则可以输出，并且次数加一</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">str,word</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> nums = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;str.length;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span> (str.substr(i,<span class="number">10</span>) == word) &#123;</span><br><span class="line">            nums+=<span class="number">1</span>;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">"str中第"</span>+nums+<span class="string">"个的单词的位置是"</span>+i);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"字符串的长度是"</span>+<span class="string">"i"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
       
     </div>
     
@@ -392,8 +413,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/08/31/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2019/10/30/Js作用域/" rel="next" title="Js作用域">
+                <i class="fa fa-chevron-left"></i> Js作用域
               </a>
             
           </div>
@@ -401,10 +422,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/09/25/ByeSame/" rel="prev" title="ByeSame">
-                ByeSame <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -461,8 +478,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -534,6 +560,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#给定一个字符串-在里面查找一个字符串-并返回其出现位置和出现的次数"><span class="nav-number">1.</span> <span class="nav-text">给定一个字符串 在里面查找一个字符串 并返回其出现位置和出现的次数</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

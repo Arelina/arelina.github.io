@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-10-09T10:29:27.346Z</updated>
+  <updated>2019-10-30T11:42:48.458Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,50 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>字符串查找问题</title>
+    <link href="http://yoursite.com/2019/10/30/%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%9F%A5%E6%89%BE%E9%97%AE%E9%A2%98/"/>
+    <id>http://yoursite.com/2019/10/30/字符串查找问题/</id>
+    <published>2019-10-30T11:41:57.000Z</published>
+    <updated>2019-10-30T11:42:48.458Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="给定一个字符串-在里面查找一个字符串-并返回其出现位置和出现的次数"><a href="#给定一个字符串-在里面查找一个字符串-并返回其出现位置和出现的次数" class="headerlink" title="给定一个字符串 在里面查找一个字符串 并返回其出现位置和出现的次数"></a>给定一个字符串 在里面查找一个字符串 并返回其出现位置和出现的次数</h2><p>例如：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">"短路是指电路或电路中的JavaScript一部分被短接"</span> +</span><br><span class="line">       <span class="string">"如负载与电源两端被导线连接在一JavaScript起就称为短路短路时电源提供的电JavaScript流将比通路时"</span> +</span><br><span class="line">       <span class="string">"提供的电流大得多一JavaScript般情况下不允许短路JavaScript如果短路"</span>;</span><br><span class="line"><span class="keyword">var</span> word = <span class="string">"JavaScript"</span>;</span><br></pre></td></tr></table></figure><p>给定一个 字符串 str 要求返会在字符串中word的位置和出现次数</p><blockquote><p>方法一（简单）</p></blockquote><p>思路： 使用字符串的方法lastIndexOf() 方法 进行倒序查询，由于这个方法只能查询单个，</p><p>所以在每次查询到相应单词后，需要将字符串截取，截取所查字符串前方的字符，</p><p>可以使用 substring()方法或者slice()方法，截取单词位置之前的字符串</p><p>然后 通过循环再次 查询截取 直至str.lastIndexOf()  =-!的时候 停止循环</p><p>其中可以再循环中 每次查询出的时候把位置 存储到数组中即可 最后数组的长度即为单词出现的次数。</p><p>具体实现如下：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">str, word</span>) </span>&#123;</span><br><span class="line">    <span class="comment">//所查字符串出现的位置</span></span><br><span class="line">   <span class="keyword">var</span> loca = str.lastIndexOf(word);</span><br><span class="line">    <span class="comment">//存放位置的数组</span></span><br><span class="line">   <span class="keyword">var</span> arr = [];</span><br><span class="line">   <span class="keyword">while</span> (loca != <span class="number">-1</span>) &#123;</span><br><span class="line">       arr.push(loca)</span><br><span class="line">       str = str.substring(<span class="number">0</span>,loca);</span><br><span class="line">       loca = str.lastIndexOf(word);</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">return</span> arr;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure><blockquote><p>方法二（<i style="color:red;">最简单</i>）</p></blockquote><p>每一次截取字符串的10位，如果和目标值字符串相等  则可以输出，并且次数加一</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">str,word</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> nums = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;str.length;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span> (str.substr(i,<span class="number">10</span>) == word) &#123;</span><br><span class="line">            nums+=<span class="number">1</span>;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">"str中第"</span>+nums+<span class="string">"个的单词的位置是"</span>+i);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"字符串的长度是"</span>+<span class="string">"i"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;给定一个字符串-在里面查找一个字符串-并返回其出现位置和出现的次数&quot;&gt;&lt;a href=&quot;#给定一个字符串-在里面查找一个字符串-并返回其出现位置和出现的次数&quot; class=&quot;headerlink&quot; title=&quot;给定一个字符串 在里面查找一个字符串 并返回其出现位
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Js作用域</title>
+    <link href="http://yoursite.com/2019/10/30/Js%E4%BD%9C%E7%94%A8%E5%9F%9F/"/>
+    <id>http://yoursite.com/2019/10/30/Js作用域/</id>
+    <published>2019-10-30T11:39:32.000Z</published>
+    <updated>2019-10-30T11:41:07.135Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Js作用域"><a href="#Js作用域" class="headerlink" title="Js作用域"></a>Js作用域</h1><h3 id="《你不知道的Js》-第一章-读书笔记"><a href="#《你不知道的Js》-第一章-读书笔记" class="headerlink" title="《你不知道的Js》 第一章 读书笔记"></a>《你不知道的Js》 第一章 读书笔记</h3><blockquote><p>Js编译原理</p></blockquote><p>js属于一门 “编译语言”，并非编程语言，他不是提前编译的</p><p>传统编译语言流程中，一般会经历三个步骤，统称为 ”编译“</p><ol><li>词法分析</li><li>语法分析</li><li>代码生成</li></ol><p>相比传统编译过程只有三个步骤的语言的编译器，Js引擎会更复杂</p><p>Js的引擎 没有大量的时间来进行编译，Js的编译过程 不是发生在构建之前的，</p><p>相对于Js来说，大部分的情况 编译发生在代码执行前的几微秒，或者更短</p><blockquote><p>作用域</p></blockquote><p>以 var a =2; 为例，在执行这个语句，会有以下参与</p><ul><li><p>引擎</p><p>负责整个js程序的编译及执行的过程</p></li><li><p>编译器</p><p>负责语法分析和代码生成等功能</p></li><li><p><strong>作用域</strong></p><p>负责收集并维护由所有的标识符 （变量）组成的一系列查询，并实施一套严格的规则</p><p>确定当前执行的代码对这些标识符的访问权限</p></li></ul><blockquote><p>编译 var a =2; 的过程</p></blockquote><ol><li><p>首先，遇到 var a； 编译器 会向作用域查询  是否存在一个该名称的变量存在于<strong>同一个作用域</strong>的集合中。如果存在的话，编译器会直接忽略这个声明，继续进行编译，如果不存在，则会要求作用域，在当前作用域的集合中 声明一个新的变量，命名为 a。</p></li><li><p>然后 编译器会为引擎生成运行所需的代码，这些代码就是用来执行 a= 2；这个赋值操作。</p><p>引擎运行时，首先询问当前作用域，查找集合中是否存在一个叫做a的变量，如果存在，则会使用这个变量，如果没有，则会继续查找这个这个变量。</p><p>如果找到了a，则会把2赋值给a，如果没有则会抛出一个异常</p></li></ol><blockquote><p>关于编译器 和 引擎</p></blockquote><p>引擎在对变量进行查询一共有两种，一个时LHS,另一个时RHS;</p><p>笼统的说，这两个时一个在赋值操作的左侧，一个在赋值操作的右侧</p><p>例1.</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(a);</span><br></pre></td></tr></table></figure><p>这里就是对a的一个RHS引用，因为这里a并没有赋值，只是去查找了a的值，并传给了console</p><p>比如 a = 2；就是LHS查询，这里并不关心当前值是什么，只是为 =2 找到一个目标。</p><p>例2. </p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">a</span>) </span>&#123;</span><br><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">//2</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">foo(<span class="number">2</span>);</span><br></pre></td></tr></table></figure><blockquote><p>引擎：我说作用域，我需要为foo进行RHS引用。你见过它吗？</p><p>作用域：别说，我还真见过，编译器那小子刚刚声明了它。它是一个函数，给你。 </p><p>引擎：哥们太够意思了！好吧，我来执行一下foo。 </p><p>引擎：作用域，还有个事儿。我需要为a进行LHS引用，这个你见过吗？ </p><p>作用域：这个也见过，编译器最近把它声名为foo的一个形式参数了，拿去吧。 </p><p>引擎：大恩不言谢，你总是这么棒。现在我要把2赋值给a。</p><p>引擎：哥们，不好意思又来打扰你。我要为console进行RHS引用，你见过它吗？ </p><p>作用域：咱俩谁跟谁啊，再说我就是干这个。这个我也有，console 是个内置对象。 给你。 </p><p>引擎：么么哒。我得看看这里面是不是有log(..)。太好了，找到了，是一个函数。 </p><p>引擎：哥们，能帮我再找一下对a的RHS引用吗？虽然我记得它，但想再确认一次。 </p><p>作用域：放心吧，这个变量没有变动过，拿走，不谢。 </p><p>引擎：真棒。我来把a的值，也就是2，传递进log(..)。 </p></blockquote><hr><blockquote><p><strong>作用域和嵌套</strong></p></blockquote><p>规则： 当一个快或者函数 嵌套在另外一个块或者函数的时候，就发生了作用域的嵌套。</p><p>所以i，在当前作用域中无法找到某个变量的时候，引擎会在外层嵌套的作用域中继续查找，直到找到该变量，或者 抵达最外层的作用域（也就是全局作用域）为止</p><p>例3.</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span> (<span class="params">a</span>) </span>&#123;</span><br><span class="line"><span class="built_in">console</span>.log(a+b);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> b=<span class="number">2</span>;</span><br><span class="line"></span><br><span class="line">foo(<span class="number">2</span>);</span><br></pre></td></tr></table></figure><p>引擎：foo 的作用域兄弟，你见过 b 吗？我需要对它进行 RHS 引用。 </p><p>作用域：听都没听过，走开。</p><p>引擎：foo 的上级作用域兄弟，咦？有眼不识泰山，原来你是全局作用域大哥， 太好了。你见过 b 吗？我需要对它进行 RHS 引用。 </p><p>作用域：当然了，给你吧。</p><blockquote><p>异常</p></blockquote><p>对于 例3，第一次对RHS查询时时无法找到该变量的，所以引擎会抛出ReferenceError 异常。</p><p>相对于，RHS,Lhs查询，如果在顶层（全局作用域下） 也无法找到目标变量，<strong>全局作用域</strong>中就会创建一个具有该名称的变量，并返回给引擎，前提时程序运行在非”严格模式“下</p><p>自从es5 以后，有了”严格模式“ 如果是在严格模式下，即使是LHS查询，如果没有变量，即使再全局作用域的时候 也不会创建并返回一个全局变量，同时会抛出和RHS类似的ReferenceError 异常</p><p>如果RHS找到查询到了变量，但是对这个变量进行了不合理的操作，也会引起一种异常，叫做TypeError。</p><p>ReferenceError 同作用域判别失败相关，而 TypeError 则代表作用域判别成功了，但是对 结果的操作是非法或不合理的</p><blockquote><p>总结</p></blockquote><p>作用域是一套规则，用于确定在何处以及如何查找变量（标识符）。如果查找的目的是对 变量进行赋值，那么就会使用 LHS 查询；如果目的是获取变量的值，就会使用 RHS 查询。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Js作用域&quot;&gt;&lt;a href=&quot;#Js作用域&quot; class=&quot;headerlink&quot; title=&quot;Js作用域&quot;&gt;&lt;/a&gt;Js作用域&lt;/h1&gt;&lt;h3 id=&quot;《你不知道的Js》-第一章-读书笔记&quot;&gt;&lt;a href=&quot;#《你不知道的Js》-第一章-读书笔记&quot; cla
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>用css渐变实现菱形图像</title>
